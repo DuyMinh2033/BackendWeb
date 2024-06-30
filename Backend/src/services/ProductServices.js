@@ -4,7 +4,6 @@ const productModel = require('../model/ProducModel');
 const createProduct = (data) => {
     return new Promise(async (resolve, reject) => {
         const { name, image, type, price, countInStock, rating, description } = data;
-        console.log('data', data)
         try {
             // Kiểm tra xem người dùng đã tồn tại chưa
             const checkProduct = await productModel.findOne({ name });

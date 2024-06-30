@@ -9,7 +9,8 @@ const userSchema = new mongoose.Schema(
         address: { type: String },
         avatar: { type: String },
         acces_token: { type: String, require: true },
-        refresh_token: { type: String, require: true }
+        refresh_token: { type: String, require: true },
+        otpPassword: { type: Number },
     },
     {
         timestamps: true

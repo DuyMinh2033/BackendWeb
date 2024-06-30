@@ -61,6 +61,12 @@ const loginUser = (userLogin) => {
                     message: 'User is not defined'
                 });
             }
+            if (password !== checkUser.password) { // so sánh trực tiếp mật khẩu
+                return resolve({
+                    status: 'Error',
+                    message: 'Mật khẩu hoặc email không đúng'
+                });
+            }
             // const ComparePassWord = bcrypt.compareSync(password, checkUser.password) // so sánh password khi login có bằng với password database không
             // if (!ComparePassWord) { // nếu không bằng 
             //     return resolve({
@@ -123,7 +129,7 @@ const updateUser = (id, data) => {
                 message: 'Cập nhật thành công',
                 access_token,
                 refresh_token,
-                data: updatedUser  // Trả về updatedUser thay vì updateUser
+                data: updatedUser
             });
         } catch (e) {
             return reject({

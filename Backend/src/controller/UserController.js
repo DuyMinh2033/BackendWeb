@@ -207,7 +207,6 @@ const logoutUser = async (req, res) => {
 }
 
 const deleteUserMany = async (req, res) => {
-   
     try {
         const Ids = req.body.id
         if (!Ids) {

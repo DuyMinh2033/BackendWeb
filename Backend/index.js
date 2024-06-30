@@ -21,9 +21,6 @@ app.get('/', (req, res, next) => {
 
 // app.use(bodyParser.json())
 app.use(bodyParser.json({ limit: '50mb' })); // fix PayloadTooLargeError: request entity too large
-// app.use(bodyParser.urlencoded({
-//     extended: true
-// }));
 
 app.use(cookieParser())
 routes(app)
@@ -35,8 +32,6 @@ mongoose.connect(process.env.MONGO_DB)
     .catch((err) => {
         console.log(err)
     })
-
-
 
 const port = process.env.PORT || 3001
 app.listen(port, () => {
